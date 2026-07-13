@@ -2135,7 +2135,7 @@ void Artd::AddPerfConfigFlags(PriorityClass priority_class,
 
   // Enable compiling dex files in isolation on low ram devices.
   // It takes longer but reduces the memory footprint.
-  dex2oat_args.AddIf(props_->GetBool("ro.config.low_ram", /*default_value=*/false),
+  dex2oat_args.AddIf(props_->GetBool("ro.config.low_ram", /*default_value=*/true),
                      "--compile-individually");
 
   for (const std::string& flag :
